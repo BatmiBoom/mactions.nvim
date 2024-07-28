@@ -10,7 +10,7 @@ local get_reference = function(line)
 	end
 
 	local title = line:sub(#spaces + 3, -1)
-	local reference = spaces .. "- [" .. title .. "](#" .. title .. ")"
+	local reference = spaces .. "- [" .. title .. "](#" .. string.gsub(string.lower(title), " ", "-") .. ")"
 
 	return reference
 end
